@@ -1,0 +1,277 @@
+.meeting-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.meetings-table {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.meetings-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.meetings-table th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--border);
+}
+
+.meetings-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.meetings-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.meetings-table tbody tr:hover {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.meetings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.title-cell {
+  font-weight: 500;
+  color: var(--text-primary);
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions-cell {
+  white-space: nowrap;
+}
+
+.actions-cell .btn {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.actions-cell .btn:last-child {
+  margin-right: 0;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #fef2f2 0%, #fde8e8 100%);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--danger-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.error-message strong {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.error-message svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.125rem;
+}
+
+@media (max-width: 1024px) {
+
+  .meetings-table th,
+  .meetings-table td {
+    padding: 1rem;
+  }
+
+  .title-cell {
+    max-width: 250px;
+  }
+
+  .error-message {
+    padding: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .meetings-table {
+    overflow: visible;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0;
+  }
+
+  .meetings-table table,
+  .meetings-table thead,
+  .meetings-table tbody,
+  .meetings-table th,
+  .meetings-table td,
+  .meetings-table tr {
+    display: block;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .meetings-table thead {
+    display: none;
+  }
+
+  .meetings-table tbody {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  .meetings-table tbody tr {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: var(--shadow-sm) !important;
+    display: block;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .meetings-table tbody tr:hover {
+    background: var(--surface) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .meetings-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .meetings-table td {
+    padding: 0.5rem 0;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .meetings-table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .title-cell {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .title-cell:before {
+    content: "Titel";
+  }
+
+  .meetings-table td:nth-child(2):before {
+    content: "Erstellt am";
+  }
+
+  .meetings-table td:nth-child(3):before {
+    content: "Status";
+  }
+
+  .meetings-table td:nth-child(4):before {
+    content: "Aktionen";
+  }
+
+  .actions-cell {
+    white-space: normal;
+    margin-top: 0.5rem;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .actions-cell .btn {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .actions-cell .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .error-message {
+    padding: 0.875rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .error-message strong {
+    justify-content: center;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .meeting-list-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .meetings-table tbody tr {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .meetings-table td {
+    padding: 0.375rem 0;
+  }
+
+  .title-cell {
+    font-size: 0.9375rem;
+  }
+
+  .actions-cell .btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .error-message {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}

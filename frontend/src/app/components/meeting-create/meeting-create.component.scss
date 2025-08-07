@@ -1,0 +1,132 @@
+.meeting-create-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.meeting-form {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.meeting-form .form-group {
+  margin-bottom: 2rem;
+}
+
+.meeting-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.meeting-form label svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.meeting-form input,
+.meeting-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: var(--surface);
+  resize: vertical;
+}
+
+.meeting-form input:focus,
+.meeting-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgb(79 70 229 / 0.1);
+  transform: translateY(-1px);
+}
+
+.meeting-form input.error,
+.meeting-form textarea.error {
+  border-color: var(--danger-color);
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.meeting-form textarea {
+  min-height: 200px;
+  line-height: 1.6;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.form-actions .btn {
+  min-width: 140px;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #fef2f2 0%, #fde8e8 100%);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--danger-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.error-message strong {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.error-message strong svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 640px) {
+  .error-message {
+    padding: 0.875rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .error-message strong {
+    justify-content: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .meeting-create-container {
+    padding: 1rem;
+  }
+
+  .meeting-form {
+    padding: 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}

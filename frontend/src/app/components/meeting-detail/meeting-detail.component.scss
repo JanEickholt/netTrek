@@ -1,0 +1,494 @@
+.meeting-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.meeting-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.meeting-header {
+  background: linear-gradient(135deg, var(--surface) 0%, #f8fafc 100%);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.meeting-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.meeting-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.created-date {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.created-date svg {
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #fef2f2 0%, #fde8e8 100%);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--danger-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.error-message strong {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.error-message svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.125rem;
+}
+
+.analysis-section {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analysis-card {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.analysis-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.analysis-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.analysis-card h2 svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.summary-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.action-items {
+  list-style: none;
+  counter-reset: action-counter;
+}
+
+.action-items li {
+  counter-increment: action-counter;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.action-items li:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 100%);
+}
+
+.action-items li::before {
+  content: counter(action-counter);
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color);
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.participants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.participant-badge {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #6366f1 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+
+.participant-badge:hover {
+  transform: scale(1.05);
+}
+
+
+.original-content {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.original-content h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.original-content h2 svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.content-text {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.processing-state,
+.failed-state {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.failed-content {
+  text-align: center;
+  grid-column: 2;
+}
+
+.processing-state .spinner-small {
+  flex-shrink: 0;
+}
+
+.processing-text {
+  text-align: center;
+  flex: 1;
+}
+
+.processing-state::after {
+  content: '';
+  width: 1.25rem;
+  flex-shrink: 0;
+}
+
+.processing-state {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  border-color: #f59e0b;
+}
+
+.failed-state {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border-color: #ef4444;
+}
+
+.processing-state svg,
+.failed-state svg {
+  flex-shrink: 0;
+}
+
+
+@media (max-width: 768px) {
+  .meeting-detail-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header-actions .btn {
+    min-width: 180px;
+  }
+
+  .meeting-header {
+    padding: 1.25rem;
+  }
+
+  .meeting-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .meeting-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .error-message {
+    padding: 0.875rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .error-message strong {
+    justify-content: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .analysis-section {
+    gap: 1.25rem;
+  }
+
+  .analysis-card {
+    padding: 1.25rem;
+  }
+
+  .analysis-card h2 {
+    font-size: 1.125rem;
+    flex-wrap: wrap;
+  }
+
+  .action-items {
+    margin-left: 0;
+  }
+
+  .action-items li {
+    margin-left: 1.5rem;
+    padding: 0.875rem;
+    font-size: 0.9375rem;
+  }
+
+  .action-items li::before {
+    left: -1.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.6875rem;
+  }
+
+  .participants {
+    gap: 0.5rem;
+  }
+
+  .participant-badge {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .original-content {
+    padding: 1.25rem;
+  }
+
+  .original-content h2 {
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .content-text {
+    font-size: 0.875rem;
+    padding: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .processing-state,
+  .failed-state {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+    gap: 0.5rem;
+  }
+
+  .processing-state svg,
+  .failed-state svg {
+    align-self: center;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .meeting-detail-container {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .header {
+    gap: 0.75rem;
+  }
+
+  .header .btn {
+    font-size: 0.8125rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .meeting-header {
+    padding: 1rem;
+  }
+
+  .meeting-header h1 {
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+
+  .error-message {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .analysis-card {
+    padding: 1rem;
+  }
+
+  .analysis-card h2 {
+    font-size: 1rem;
+    gap: 0.375rem;
+  }
+
+  .analysis-card h2 svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .action-items li {
+    padding: 0.75rem;
+    margin-left: 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .action-items li::before {
+    left: -1.5rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 0.625rem;
+  }
+
+  .participant-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.625rem;
+  }
+
+  .original-content {
+    padding: 1rem;
+  }
+
+  .original-content h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .original-content h2 svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .content-text {
+    font-size: 0.8125rem;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+
+  .processing-state,
+  .failed-state {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .created-date {
+    font-size: 0.8125rem;
+  }
+
+  .summary-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
