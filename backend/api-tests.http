@@ -1,0 +1,24 @@
+POST http://localhost:5000/meetings HTTP/1.1
+
+{
+  "content": "Meeting-Protokoll als Text...",
+  "title": "Weekly Team Meeting"
+}
+
+
+### 
+
+GET http://localhost:5000/meetings/b20fe991-9433-4966-83e3-d584e9d9ae19 HTTP/1.1
+
+
+### 
+
+GET http://localhost:5000/meetings HTTP/1.1
+
+
+### 
+
+DELETE http://localhost:5000/meetings/b20fe991-9433-4966-83e3-d584e9d9ae19 HTTP/1.1
+
+
+### 
